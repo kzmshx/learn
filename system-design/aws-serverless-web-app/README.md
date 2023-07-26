@@ -25,3 +25,10 @@ mkdir ./site
 ```shell
 aws s3 cp s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website/ ./site --recursive
 ```
+
+### 静的ウェブサイトをデプロイ
+
+> 差分ベースのフロントエンドのビルドとデプロイを有効または無効にする
+> https://docs.aws.amazon.com/ja_jp/amplify/latest/userguide/build-settings.html#enable-diff-deploy
+
+差分ベースのデプロイをするための環境変数がデフォルトで `false` になっていたので `true` に変更。
