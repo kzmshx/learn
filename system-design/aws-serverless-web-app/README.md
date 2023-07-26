@@ -32,3 +32,9 @@ aws s3 cp s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website/ ./
 > https://docs.aws.amazon.com/ja_jp/amplify/latest/userguide/build-settings.html#enable-diff-deploy
 
 差分ベースのデプロイをするための環境変数がデフォルトで `false` になっていたので `true` に変更。
+
+## 感想
+
+- AWS Amplify
+  - ハンズオンの内容から外れてGitHubリポジトリからのデプロイとモノレポを試してみたが両方ともめっちゃ簡単
+  - [Render](https://render.com/)のほうがデプロイは速い
