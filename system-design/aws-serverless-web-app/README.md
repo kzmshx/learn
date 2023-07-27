@@ -33,8 +33,21 @@ aws s3 cp s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website/ ./
 
 差分ベースのデプロイをするための環境変数がデフォルトで `false` になっていたので `true` に変更。
 
+### Amazon Cognitoのユーザープールをセットアップ
+
+メッセージ配信設定で `FROM email address` に設定できるemail address identityがなかったので作成。
+
+- [Creating and verifying identities in Amazon SES > Verifying an email address identity | Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#just-verify-email-proc)
+- [Creating and verifying identities in Amazon SES > Creating an email address identity | Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-email-addresses-procedure)
+- [Using configuration sets in Amazon SES | Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/using-configuration-sets.html)
+  - デフォルトの設定で作成
+- [Creating configuration sets in SES | Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/creating-configuration-sets.html)
+  - デフォルトの設定で作成
+
 ## 感想
 
 - AWS Amplify
   - ハンズオンの内容から外れてGitHubリポジトリからのデプロイとモノレポを試してみたが両方ともめっちゃ簡単
   - [Render](https://render.com/)のほうがデプロイは速い
+  - コンソールでやったAmplifyの設定をコード化してリポジトリ内に置くにはどうすればいいんだろう
+- このハンズオンのインフラ構築全体をコード化してコマンド操作でアプリケーションを再現できるようにしたい
