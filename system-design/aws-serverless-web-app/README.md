@@ -46,8 +46,11 @@ aws s3 cp s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website/ ./
 
 ## 感想
 
-- AWS Amplify
+- AWS Amplifyによる静的ウェブホスティング
   - ハンズオンの内容から外れてGitHubリポジトリからのデプロイとモノレポを試してみたが両方ともめっちゃ簡単
   - [Render](https://render.com/)のほうがデプロイは速い
   - コンソールでやったAmplifyの設定をコード化してリポジトリ内に置くにはどうすればいいんだろう
+- Amazon Cognitoによるユーザー認証・管理
+  - 前にやってみたときはユーザー登録の確認まで行けなかった気がするが今回は行けた
+  - Verified IdentityのEmailでのサインイン、それ以外でのEmailでのサインインからのコンソールでの確認、両方できた
 - このハンズオンのインフラ構築全体をコード化してコマンド操作でアプリケーションを再現できるようにしたい
