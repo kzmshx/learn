@@ -1,0 +1,19 @@
+{
+  "name": "@aws-serverless-web-app/serverless-backend",
+  "version": "0.1.0",
+  "description": "Serverless Backend",
+  "license": "UNLICENSED",
+  "author": "Kazumasa Hirata",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fmt": "prettier '{**/*,*}.{js,json}' --write"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1424.0",
+    "crypto": "^1.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
