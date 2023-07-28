@@ -60,3 +60,7 @@ aws s3 cp s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website/ ./
     - https://docs.aws.amazon.com/ja_jp/apigateway/latest/developerguide/apigateway-enable-cognito-user-pool.html
     - https://dev.classmethod.jp/articles/api-gateway-cognito-authorizer/
 - このハンズオンのインフラ構築全体をコード化してコマンド操作でアプリケーションを再現できるようにしたい
+
+## 完了
+
+2023-07-28
