@@ -53,4 +53,7 @@ aws s3 cp s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website/ ./
 - Amazon Cognitoによるユーザー認証・管理
   - 前にやってみたときはユーザー登録の確認まで行けなかった気がするが今回は行けた
   - Verified IdentityのEmailでのサインイン、それ以外でのEmailでのサインインからのコンソールでの確認、両方できた
+- Amazon API Gateway / AWS Lambda / Amazon DynamoDBによるサーバーレスなREST API
+  - requestUnicorn.jsがない
+    - https://github.com/aws-samples/aws-serverless-workshops/issues/325
 - このハンズオンのインフラ構築全体をコード化してコマンド操作でアプリケーションを再現できるようにしたい
