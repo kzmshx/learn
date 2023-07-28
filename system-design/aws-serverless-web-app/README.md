@@ -56,4 +56,7 @@ aws s3 cp s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website/ ./
 - Amazon API Gateway / AWS Lambda / Amazon DynamoDBによるサーバーレスなREST API
   - requestUnicorn.jsがない
     - https://github.com/aws-samples/aws-serverless-workshops/issues/325
+  - CognitoをAPI GatewayのAuthorizationに設定する方法が分からない
+    - https://docs.aws.amazon.com/ja_jp/apigateway/latest/developerguide/apigateway-enable-cognito-user-pool.html
+    - https://dev.classmethod.jp/articles/api-gateway-cognito-authorizer/
 - このハンズオンのインフラ構築全体をコード化してコマンド操作でアプリケーションを再現できるようにしたい
