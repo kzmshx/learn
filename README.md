@@ -5,6 +5,15 @@
 
 # 日記
 
+## 2023-08-07
+
+- ウェブサイトのメインコンテンツの抽出（リーダーモードのやつ）にはArc90というやつが使える
+  - https://github.com/mozilla/readability
+  - https://github.com/masukomi/arc90-readability
+- テキストからの音声合成にVOICEVOXがなかなかよさそう
+  - https://qiita.com/kunishou/items/814e837cf504ce287a13#%EF%BC%95whisperbertvoicevox%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E5%AF%BE%E8%A9%B1%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88
+  - GCP、AWSにもText-to-Speechのサービスはある、有料だけど → https://qiita.com/Reng/items/f10265c0ee994a0b4f57
+
 ## 2023-08-04
 
 - スプリントレビューに呼ぶ人は常に同じで良いわけじゃない、プランニング結果（＝そのスプリントの成果物の予定）に応じて必要な人間を招集する必要がある。例えば、今スプリントの開発内容に認証機能や課金機能などのユーザーの安全にとって重大な機能を開発するとしたらセキュリティの専門家を招集すべきだ。
