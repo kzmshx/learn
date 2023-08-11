@@ -7,7 +7,9 @@
   "author": "Kazumasa Hirata",
   "scripts": {
     "extract-content": "node src/extract-content.js",
-    "text-to-speech": "node src/text-to-speech.js"
+    "text-to-speech": "node src/text-to-speech.js",
+    "text-to-ssml": "node src/text-to-ssml.js",
+    "make:env": "cp .env.tpl .env"
   },
   "dependencies": {
     "@aws-sdk/client-polly": "^3.387.0",
@@ -15,7 +17,9 @@
     "aws-sdk": "^2.1433.0",
     "dotenv": "^16.3.1",
     "fs": "0.0.1-security",
-    "jsdom": "^22.1.0"
+    "jsdom": "^22.1.0",
+    "mustache": "^4.2.0",
+    "openai": "^3.3.0"
   },
   "devDependencies": {
     "prettier": "^3.0.1"

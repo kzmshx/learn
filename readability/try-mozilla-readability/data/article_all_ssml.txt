@@ -1,0 +1,118 @@
+<speak><phoneme type="ruby" ph="チャットジーピーティー">ChatGPT</phoneme>に「<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>」という新機能が追加されました。</speak>
+<speak>その名の通りプログラミングコードの生成・実行が可能になるものです。</speak>
+<speak>プログラミングになじみのない人には縁遠いように思われるかもしれませんが、ユーザー自身がコードを書く必要はないので、むしろプログラミングがわからない人にこそ使ってほしい機能です。</speak>
+<speak>今回は、<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>を利用することでどんなことができるのか、プログラミングがわからない人がどう活用できそうかなど、いくつか例を挙げながら解説していきたいと思います。</speak>
+<speak>初めに<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>がどういうものなのか簡単に説明しましょう。</speak>
+<speak><phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>は<phoneme type="ruby" ph="チャットジーピーティー">ChatGPT</phoneme>の有償サービス「ChatGPT Plus」(月額20ドル)登録ユーザー向けに提供されている機能です。</speak>
+<speak>2023年8月現在は、設定画面の「Beta features」から同機能をオンにすることで、GPT-4によるチャットを新規に開始するときに利用できます。</speak>
+<speak>設定画面の「Beta features」にある「Code interpreter」をオンに「GPT-4」を選び、「<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>」をクリックして新規チャットを開始する Code Interpreterを有効にした状態でチャットで質問・指示すると、これまで通りGPT-4を用いた自然言語による回答を得ることができます。</speak>
+<speak>しかし回答にプログラミングによる処理が必要と判断されたときは、そのプログラムコードと処理内容の解説、さらにはそのコードを実行したときの処理結果まで表示してくれます。</speak>
+<speak>質問の回答にプログラム処理が必要なときは、コードと解説が表示され、必要に応じて実行結果も表示する 生成されるコードは<phoneme type="ruby" ph="パイソン">Python</phoneme>言語で、サーバー上の仮想的なPython実行環境でそのコードが処理され、チャット画面に結果表示する仕組みです。</speak>
+<speak>そのため、ユーザーの端末に<phoneme type="ruby" ph="パイソン">Python</phoneme>や関連するライブラリなどがインストールされている必要はありません。</speak>
+<speak>誰でも<phoneme type="ruby" ph="パイソン">Python</phoneme>によるプログラムをお手軽かつ安全に生成・実行できるわけです。</speak>
+<speak>ドラッグ＆ドロップで質問に関連するファイルをアップロードすることも可能 また、チャット画面に任意のファイルをアップロードでき、そのファイル内のデータを処理するコードの生成も可能になっています。</speak>
+<speak>たとえば何らかのログデータが含まれた<phoneme type="ruby" ph="シーエスブイ">CSV</phoneme>ファイルをアップロードして、中身を処理する<phoneme type="ruby" ph="パイソン">Python</phoneme>コードを生成し、ログ分析の結果を出力するようなこともできます。</speak>
+<speak>以上、<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>でできること、メリットを改めて整理すると以下の通りです。</speak>
+<speak><phoneme type="ruby" ph="パイソン">Python</phoneme>実行環境がなくてもコードの生成・実行が可能ファイルのアップロードと、そのファイルを対象にした処理が行なえるコードに加えて解説も表示されるため、Python学習者の役に立つコード内で各種ライブラリを利用できるため処理できる範囲が広い 一方で制約もあります。</speak>
+<speak>特に気を付けておきたいのは、コード内からインターネットにアクセスできないことです。</speak>
+<speak>たとえばWebサイトにアクセスしてそのページデータを元に何らかの処理をしたり、Web上のファイルをダウンロードしたり、といったようなコードは生成できても実行はされません(もしくは実行に失敗します)。</speak>
+<speak>ライブラリが内部的にインターネットにアクセスしてデータを取得するようなケースもこれに該当します。</speak>
+<speak>それに伴い、一部のライブラリでは<phoneme type="ruby" ph="にほんご">日本語</phoneme>の処理ができない場合もあります。</speak>
+<speak><phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>の<phoneme type="ruby" ph="パイソン">Python</phoneme>実行環境は、ネットにつながっていないスタンドアロンなコンピューター上にあるもの、と理解しておくと良いでしょう。</speak>
+<speak>インターネットへのアクセスが必要な処理は実行できない なお、<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>をフルに使えるのは現在のところ<phoneme type="ruby" ph="ウェブばん">Web版</phoneme>のみとなります。</speak>
+<speak><phoneme type="ruby" ph="アイオーエス">iOS</phoneme>アプリや<phoneme type="ruby" ph="アンドロイド">Android</phoneme>アプリでは新規にチャットを開始するときに<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>を選ぶことができません。</speak>
+<speak><phoneme type="ruby" ph="ウェブばん">Web版</phoneme>で作成したチャットの<phoneme type="ruby" ph="つづき">続き</phoneme>から利用することは可能ですが、ファイルのアップロードには対応しないこと、セッションタイムアウトまでの時間が短く、タイムアウトするとアップロードしたファイルやチャットの文脈が保持されないことに注意してください。</speak>
+<speak>アプリから新規で<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>を開始することはできないが、<phoneme type="ruby" ph="ウェブばん">Web版</phoneme>からの<phoneme type="ruby" ph="つづき">続き</phoneme>を利用することは可能Code Interpreterのいろいろな使い方 では、Code Interpreterを使うことでどんなことができるのか、いくつか例示してみたいと思います。</speak>
+<speak>実現したい処理やアルゴリズムのコードを生成する 最もシンプルな使い方として考えられるのは、ユーザーの欲しいプログラミングコードや処理結果を得るというものです。</speak>
+<speak>たとえば<phoneme type="ruby" ph="えんしゅうりつ">円周率</phoneme>を求める<phoneme type="ruby" ph="あるごりずむ">アルゴリズム</phoneme>を知りたいときは下記のように質問します。</speak>
+<speak>回答内容は質問するごとに変わる場合があります。</speak>
+<speak><phoneme type="ruby" ph="えんしゅうりつ">円周率</phoneme>を求める<phoneme type="ruby" ph="あるごりずむ">アルゴリズム</phoneme>を要求したときの画面質問 100桁までの円周率を求めるアルゴリズムを生成し、実行してください ChatGPTの回答(抜粋) 円周率を計算するためのさまざまな方法がありますが、ここでは特に有名で効率的なアルゴリズムである「<phoneme type="ruby" ph="べいりーぼろうぃんぷらうふぇっかーのこうしき">ベイリー–ボロウィン–プラウフェッカーの公式</phoneme>(BBP公式)」を使用します。</speak>
+<speak>：  ：  def compute_pi(precision):  decimal.getcontext().prec = precision + 2  # increase precision to account for intermediate calculations  decimal.getcontext().Emax = 999999999  decimal.getcontext().Emin = -999999999  decimal.getcontext().rounding = decimal.ROUND_DOWN  one = decimal.Decimal(1)  sixteen = decimal.Decimal(16)  ：  ：  <phoneme type="ruby" ph="えんしゅうりつ">円周率</phoneme>の最初の100桁の近似値は以下の通りです：  3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170675  <phoneme type="ruby" ph="ぱいそん">Python</phoneme>には円周率を高速に求めるためのライブラリが用意されており、<phoneme type="ruby" ph="こーどいんたーぷれたー">Code Interpreter</phoneme>ではそれを利用したコードの生成・実行もできます。</speak>
+<speak>が、上記のように基本的な<phoneme type="ruby" ph="あるごりずむ">アルゴリズム</phoneme>を理解して原理的なところを学ぶ、といったような使い方も便利です。</speak>
+<speak><phoneme type="ruby" ph="しーえすぶい">CSV</phoneme>データを読み込んでグラフ化する <phoneme type="ruby" ph="こーどいんたーぷれたー">Code Interpreter</phoneme>の最大の特徴の1つが、ファイルをアップロードできることです。</speak>
+<speak>これはChatGPTの通常のチャットにない機能で、応用次第でChatGPT自体の活用範囲が広げられる面白いポイントと言えます。</speak>
+<speak>ファイルアップロード機能のよくある使い道としては、<phoneme type="ruby" ph="しーえすぶい">CSV</phoneme>ファイルなどの構造化データを読み込んで集計・統計処理を行なうものです。</speak>
+<speak>下記画像の例は、筆者がスマート体組成計で数年間記録してきたヘルスデータの<phoneme type="ruby" ph="しーえすぶい">CSV</phoneme>ファイルをアップロードし、週平均の体重の推移をグラフ化したものです。</speak>
+<speak>ヘルスデータの<phoneme type="ruby" ph="しーえすぶい">CSV</phoneme>ファイルをアップロードしてグラフ化する例 CSVファイルに含まれる体重のデータをきちんと認識し、グラフ表示してくれました。</speak>
+<speak>グラフ化するだけなら<phoneme type="ruby" ph="みくろそふとえくせる">Microsoft Excel</phoneme>などの表計算ソフトでも難しくはありませんが、今回のように「週平均」を算出しながら見やすいグラフにするにはそれなりに手間がかかります。</speak>
+<speak>他人に見せる資料として作るのではなく、とりあえず自分だけが把握できればいいというような場面で、手早くグラフ作成してくれる<phoneme type="ruby" ph="こーどいんたーぷれたー">Code Interpreter</phoneme>はうってつけです。</speak>
+<speak>ちなみに、グラフ内の文字は標準で日本語に対応していないため、そのままでは文字化けすることがあります。</speak>
+<speak>これを防ぐには別途<phoneme type="ruby" ph="ぐーぐるふぉんつ">Google Fonts</phoneme>などからフォントファイルをダウンロードし、<phoneme type="ruby" ph="しーえすぶい">CSV</phoneme>ファイルと同じようにアップロードしてグラフ描画にそのフォントを使うように指示します。</speak>
+<speak>場合によってはグラフ内の日本語が文字化けすることがあるそのときは<phoneme type="ruby" ph="ぐーぐるふぉんつ">Google Fonts</phoneme>などからフォントをダウンロードChatGPTにアップロードして新しいフォントを使うように指示すれば文字化けを解消できる<phoneme type="ruby" ph="えっくすえむえる">XML</phoneme>/<phoneme type="ruby" ph="じぇいそん">JSON</phoneme>形式のデータを読み取んでグラフ化、または統計データにする <phoneme type="ruby" ph="しーえすぶい">CSV</phoneme>形式をはじめ、XML形式やJSON形式などの構造化データを読み取って処理するのは<phoneme type="ruby" ph="こーどいんたーぷれたー">Code Interpreter</phoneme>の得意とするところです。</speak>
+<speak>下記1つ目の例は、とあるベンチマークソフトから出力された<phoneme type="ruby" ph="えっくすえむえる">XML</phoneme>ファイルをアップロードし、その中の「～score」という要素の値だけを抽出して横向きのグラフで表示したものです。</speak>
+<speak>そのためにはどういったライブラリを使用するのか、といったことも解説してくれるので、今後プログラムで<phoneme type="ruby" ph="えっくすえむえる">XML</phoneme>データを扱うときの参考にもなります。</speak>
+<speak>ベンチマークソフトから出力された<phoneme type="ruby" ph="えっくすえむえる">XML</phoneme>ファイルをもとにグラフを生成する例 2つ目の例は<phoneme type="ruby" ph="じぇいそん">JSON</phoneme>形式のデータを扱う例です。</speak>
+<speak>ただし、適切な<phoneme type="ruby" ph="じぇいそん">JSON</phoneme>データが手元になかったため、ここではその元となるJSONデータ自体を<phoneme type="ruby" ph="こーどいんたーぷれたー">Code Interpreter</phoneme>で生成するところから始めてみました。</speak>
+<speak>とりあえず架空の個人情報を生成してみます。</speak>
+<speak>質問 架空の個人情報データを10人分生成し、<phoneme type="ruby" ph="じぇいそん">JSON</phoneme>形式のデータで表現してください ChatGPTの回答(抜粋) 以下に、10人分の架空の個人情報をJSON形式で生成した結果を示します:  [  {  "name": "岡田 幹",  "age": 67,  "email": "hiroshishimizu@hotmail.com",  "address": "富山県鴨川市雷門17丁目27番8号 松石ハイツ716"  },  ：  ：  {  "name": "長谷川 直子",  "age": 49,  "email": "sayuri67@yahoo.com",  "address": "徳島県中央区丸の内ＪＰタワー16丁目17番11号"  }  ]  架空の個人情報を生成するにあたっては、普通にChatGPTに指示して名前、年齢、住所などを列挙してもらう方法もあります。</speak>
+<speak>ただ、その場合はランダム性が低く、「それっぽくない」データになってしまう場合があります。</speak>
+<speak>従来の方法で<phoneme type="ruby" ph="チャットジーピーティー">ChatGPT</phoneme>に架空の個人情報を生成してもらった場合。</speak>
+<speak>一郎、二郎、三郎のように、名前が単純なパターンになっている<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>で架空の個人情報を生成してもらった場合。</speak>
+<speak>ランダム性の高い名前などになっている <phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>を利用したデータ生成では、「Faker」というPythonライブラリを使用しており、それによってもっともらしいダミーデータになっています。</speak>
+<speak>架空の情報とはいえ名前と性別、名前とメールアドレスが一致していない感じはありますが、このあたりは質問時に条件として追加することで改善されるでしょう。</speak>
+<speak>次に、この<phoneme type="ruby" ph="ジェイソン">JSON</phoneme>形式のデータをいったんローカルにファイル保存し、それを<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>にアップロードして統計情報を得たいと思います。</speak>
+<speak>質問 このデータを元に、年齢、性別の統計を表であらわしてください  添付ファイル：people.json <phoneme type="ruby" ph="チャットジーピーティー">ChatGPT</phoneme>の回答(抜粋) データに基づいて、以下の統計を得ました：  年齢の統計:  サンプル数: 10  平均年齢: 37.5歳  標準偏差: 13.79  最小年齢: 24歳  25パーセンタイル(下側四分位数): 25歳  中央値(50パーセンタイル): 35.5歳  75パーセンタイル(上側四分位数): 48歳  最大年齢: 59歳  性別の統計:  女性の数: 7  男性の数: 3 生成された個人情報をもとに統計情報を出力してもらった例 <phoneme type="ruby" ph="ジェイソン">JSON</phoneme>形式のデータが問題なく処理され、統計情報を得ることができました。</speak>
+<speak><phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>であればアップロードしたデータ形式が<phoneme type="ruby" ph="シーエスブイ">CSV</phoneme>でも、<phoneme type="ruby" ph="エックスエムエル">XML</phoneme>でも、<phoneme type="ruby" ph="ジェイソン">JSON</phoneme>でも、自動的に認識して適切に処理するコードを提示してくれます。</speak>
+<speak>簡易的なデータ分析もその場で完結してしまうので、わざわざExcelを駆使するようなこともなくなるかもしれません。</speak>
+<speak><phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>ファイルの内容を要約する <phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>でアップロードできるファイルはテキスト形式のデータに限りません。</speak>
+<speak><phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>のようなバイナリデータももちろんアップロードし、処理できます。</speak>
+<speak>たとえば中身がテキストデータメインの<phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>ファイルから文章だけを抽出して、その要約を作ってもらうところまで自動化することも可能です。</speak>
+<speak>質問 <phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>Minerを使って、4ページ目までのテキストを抽出してください  添付ファイル：baitai2307c.pdf <phoneme type="ruby" ph="チャットジーピーティー">ChatGPT</phoneme>の回答(抜粋) 了解しました。</speak>
+<speak><phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>Minerを用いて、<phoneme type="ruby" ph="ピーディーエフファイル">PDFファイル</phoneme>から4ページ目までのテキストを抽出します。</speak>
+<speak>ただし、<phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>の構造やフォーマットによっては、完全に正確な抽出が難しいこともあります。</speak>
+<speak>それでは、コードを実行してみましょう。</speak>
+<speak>：  ：  <phoneme type="ruby" ph="インプレスウォッチ">Impress Watch</phoneme>シリーズ  「<phoneme type="ruby" ph="ユーチューブ">YouTube</phoneme>チャンネル」開設のご案内  Impress <phoneme type="ruby" ph="エーディー">AD</phoneme> Guide  [<phoneme type="ruby" ph="コンシューマーメディア">Consumer Media</phoneme>]  ２つの専門<phoneme type="ruby" ph="ユーチューブチャンネル">YouTubeチャンネル</phoneme>、始めました！  ：  ： <phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>からテキスト抽出してもらった例質問 その内容を300文字程度で要約してください <phoneme type="ruby" ph="チャットジーピーティー">ChatGPT</phoneme>の回答(抜粋) このPDFは、<phoneme type="ruby" ph="インプレスウォッチシリーズ">Impress Watchシリーズ</phoneme>が2つの専門YouTubeチャンネルを開設し、それぞれのチャンネルが特化した内容を動画で発信していくことを案内しています。</speak>
+<speak>また、同シリーズでは、月間約2億78万<phoneme type="ruby" ph="ピーブイ">PV</phoneme>、月間3,200万<phoneme type="ruby" ph="ユーユー">UU</phoneme>超のオーディエンスデータを活用した広告メニューが提供されています。</speak>
+<speak>さらに、動画広告の提供が新たに開始され、再生保証を含む広告プランが提供されています。</speak>
+<speak>また、ネイティブアド(誘導枠)の提供も開始され、オウンドメディア等への誘導が可能になっています。</speak>
+<speak>ここでは<phoneme type="ruby" ph="インプレスウォッチ">Impress Watch</phoneme>の媒体資料を対象に処理してみました。</speak>
+<speak>最初に「<phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>Miner」というライブラリを使うように指示していますが、これは単に「テキストデータを抽出してください」としただけでは他のライブラリが使われ、正しく読み込めないことがあったためです。</speak>
+<speak>また、最初に「要約してください」とだけ指示した場合も期待通りの結果にならないことがあり、要約の生成を別途要求しています。</speak>
+<speak>うまくいかないときは似た質問を何度か繰り返したり、要望を段階的に追加していくことで解決策を見い出せることもあります。</speak>
+<speak>そんなわけで、指示の仕方に若干コツが必要とはいえ、日本語<phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>の内容もしっかり読み込むことができました。</speak>
+<speak><phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>でもらった資料や論文などの内容をできるだけ短時間で把握したいときにも、<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>は役に立ちそうです。</speak>
+<speak>また、コードに少し手を加えてローカルで実行できるようにすれば、大量の<phoneme type="ruby" ph="ピーディーエフ">PDF</phoneme>資料を一括で要約するのも簡単でしょう。</speak>
+<speak>画像データからテキストを<phoneme type="ruby" ph="オーシーアール">OCR</phoneme>で抽出する テキストベースのデータだけでなく、画像内にある文字を認識してテキストデータとして抽出することもできます。</speak>
+<speak>いわゆる<phoneme type="ruby" ph="オーシーアール">OCR</phoneme>と呼ばれる手法ですが、PythonにはOCR用のライブラリも用意されているため実現は容易です。</speak>
+<speak>ここでは試しに実体が画像の領収証PDFファイルをアップロードし、日時や金額を抽出してみます。</speak>
+<speak>質問 これは領収書画像のPDFファイルです。</speak>
+<speak>この中から購入日時、支払額、支払い先をテキストで抽出してください  添付ファイル：sample_receipt.pdf ChatGPTの回答(抜粋) PDFファイルからテキストを抽出するためには、Pythonのライブラリである<phoneme type="ruby" ph="パイピーディーエフツー">PyPDF2</phoneme>や<phoneme type="ruby" ph="ピーディーエフミナー">PDFMiner</phoneme>などを使用します。</speak>
+<speak>しかし、PDFが画像ベースである場合(つまり、テキストが直接読み取れない場合)は、<phoneme type="ruby" ph="オーシーアール">OCR</phoneme>(光学式文字認識)を使用する必要があります。</speak>
+<speak>Pythonの<phoneme type="ruby" ph="パイテスセラクト">pytesseract</phoneme>ライブラリはこの目的によく使用されます。</speak>
+<speak>：  ：  抽出した結果は以下の通りです：  購入日時: 2023年4月7日 10:17  支払額: 各パターンにマッチしたものは '¥191', '¥17', '¥191' ですが、これはおそらくノイズや抽出の誤りでしょう。</speak>
+<speak>領収書の支払い総額を示す部分が正しく<phoneme type="ruby" ph="オーシーアール">OCR</phoneme>できていない可能性があります。</speak>
+<speak>電話番号: '03-xxxx-xxxx' この番号が支払い先の連絡先である可能性があります。</speak>
+<speak>画像ベースのPDFを<phoneme type="ruby" ph="オーシーアール">OCR</phoneme>でテキスト抽出する例。</speak>
+<speak>日本語に対応するのは不可能なようだ この例ではあまりうまくいきませんでした。</speak>
+<speak>現在は<phoneme type="ruby" ph="コードインタプリター">Code Interpreter</phoneme>で扱う<phoneme type="ruby" ph="オーシーアール">OCR</phoneme>ライブラリが日本語に対応できない状況のため、認識精度がことさら低下している可能性があります。</speak>
+<speak>今のところ日本のユーザーにとっては、<phoneme type="ruby" ph="コードインタプリター">Code Interpreter</phoneme>を用いた<phoneme type="ruby" ph="オーシーアール">OCR</phoneme>は実用性が乏しいように思われます。</speak>
+<speak>ロゴマークなど単純な画像を生成する なんと、<phoneme type="ruby" ph="コードインタプリター">Code Interpreter</phoneme>では画像生成も可能です。</speak>
+<speak>あくまでもPython自体や一般的なライブラリが対応可能な範囲での画像生成となるため、昨今の画像生成AIのような緻密なグラフィックを描き出すことはできません。</speak>
+<speak>が、図形や文字を組み合わせたロゴくらいなら問題なくこなせます。</speak>
+<speak>質問 あなたの考えるカッコいいChatGPTのロゴを描画してください。</speak>
+<speak>丸い背景の上に「ChatGPT」という文字で構成されるカッコいい画像をお願いします。</speak>
+<speak>標準フォントで、全体の配色はお任せします ChatGPTの回答(抜粋) 私はAIであるため、アートやデザインの主観的な価値を評価する能力は持っていませんが、指定された要件に基づいてシンプルなロゴを生成することはできます。</speak>
+<speak>以下にPythonの<phoneme type="ruby" ph="マットプロットリブ">matplotlib</phoneme>と<phoneme type="ruby" ph="ピーアイエル">PIL</phoneme>ライブラリを使用して描画します。</speak>
+<speak>ただし、専門的なグラフィックデザインツールを使用したプロフェッショナルなロゴデザインには及ばないことをご了承ください。</speak>
+<speak>以上の画像は、「ChatGPT」の文字を含むシンプルなロゴです。</speak>
+<speak>ライトブルーの円形の背景の上に、黒い標準フォントで「ChatGPT」の文字が配置されています。</speak>
+<speak>このロゴはあくまで例示であり、よりプロフェッショナルなデザインが必要な場合は、専門的なグラフィックデザイナーに依頼することをお勧めします。</speak>
+<speak>このように複雑ではない画像の生成は可能ですが、反対に画像の内容を認識することはできません。</speak>
+<speak>たとえば人物写真をアップロードして「表情から感情を推測して」などと指示しても処理は不可能ですし、ごくシンプルな日本地図をアップロードしてもそれが何であるかは理解できません(ファイル名がjapan.pngであれば「日本(の地図)」であると勝手に判断しますが、日本地図をusa.pngというファイル名にすると米国の地図と誤認識します)。</speak>
+<speak>国土地理院の日本地図をアップロードし、東京にマークしてもらおうとした例。</speak>
+<speak>画像内容は解析できないため単純に中央にプロットされた「usa.png」というファイルをアップロードしているが、実体は上記の日本地図の画像。</speak>
+<speak>ファイル名に引っ張られて米国地図と思われてしまった圧縮ファイルをアップロードして処理する ここまでチャットで質問するごとに1ファイルずつアップロードしてきましたが、複数ファイルを一度にまとめてアップロードすることもできます。</speak>
+<speak>手順は、複数のファイルをZIP形式などで1つに圧縮し、その圧縮ファイルをアップロードするだけです。</speak>
+<speak>最初のCSVファイルをアップロードする例では、一度グラフを描画し、文字化けしていたときはさらにフォントファイルをアップロードして再描画していました。</speak>
+<speak>でも、CSVとフォントを1つのファイルに圧縮してアップロードすれば、少ない手間で文字化けのない(見栄えのいい)グラフが得られます。</speak>
+<speak>質問 このアーカイブに含まれる<phoneme type="ruby" ph="シーエスブイファイル">CSVファイル</phoneme>をもとに、<phoneme type="ruby" ph="いっしゅうかんごと">1週間ごと</phoneme>の<phoneme type="ruby" ph="たいじゅう">体重</phoneme>の<phoneme type="ruby" ph="へいきん">平均</phoneme>をグラフにしてください。</speak>
+<speak>グラフ内の文字表示にはこのアーカイブ内にあるフォントファイルを使ってください。</speak>
+<speak>添付ファイル：body.zip <phoneme type="ruby" ph="チャットジーピーティー">ChatGPT</phoneme>の回答(<phoneme type="ruby" ph="ばっすい">抜粋</phoneme>) 了解しました。</speak>
+<speak>まず、<phoneme type="ruby" ph="アーカイブをかいとう">アーカイブを解凍</phoneme>し、その<phoneme type="ruby" ph="ないよう">内容</phoneme>を<phoneme type="ruby" ph="かくにん">確認</phoneme>しましょう。</speak>
+<speak>：  ：  bodyフォルダ内には以下のファイルがあります：  <phoneme type="ruby" ph="シーエスブイファイル">CSVファイル</phoneme>：BodyComposition_201901-202307.csv  フォントファイル：NotoSansJP-VariableFont_wght.ttf  ：  ：  今回は「<phoneme type="ruby" ph="そくていび">測定日</phoneme>」と「<phoneme type="ruby" ph="たいじゅう">体重</phoneme>(kg)」のデータを使用して、<phoneme type="ruby" ph="いっしゅうかんごと">1週間ごと</phoneme>の体重の<phoneme type="ruby" ph="へいきん">平均</phoneme>を<phoneme type="ruby" ph="けいさん">計算</phoneme>し、グラフを<phoneme type="ruby" ph="えがきます">描きます</phoneme>。</speak>
+<speak>まず、<phoneme type="ruby" ph="そくていび">測定日</phoneme>を<phoneme type="ruby" ph="ひづけがた">日付型</phoneme>に変換し、<phoneme type="ruby" ph="しゅうごと">週ごと</phoneme>にデータを<phoneme type="ruby" ph="ぐるーぷか">グループ化</phoneme>しましょう。</speak>
+<speak>その後、<phoneme type="ruby" ph="かくしゅう">各週</phoneme>の<phoneme type="ruby" ph="へいきん">平均</phoneme><phoneme type="ruby" ph="たいじゅう">体重</phoneme>を<phoneme type="ruby" ph="けいさん">計算</phoneme>します。</speak>
+<speak>また、<phoneme type="ruby" ph="していされたフォント">指定されたフォント</phoneme>を<phoneme type="ruby" ph="マットプロットリブ">matplotlib</phoneme>で使えるように<phoneme type="ruby" ph="せってい">設定</phoneme>します。</speak>
+<speak>：  ： <phoneme type="ruby" ph="あっしゅくファイル">圧縮ファイル</phoneme>でまとめてアップロードし、<phoneme type="ruby" ph="にほんご">日本語</phoneme>で<phoneme type="ruby" ph="グラフびょうが">グラフ描画</phoneme>してもらった<phoneme type="ruby" ph="れいこーど">例コード</phoneme>は意識せずプログラムの<phoneme type="ruby" ph="じっこうけっか">実行結果</phoneme>を得る目的に使うのもアリ 具体的なPythonコードを示すとともに、あらゆる形式のデータ処理に加えて画像生成も可能な<phoneme type="ruby" ph="コードインタープリター">Code Interpreter</phoneme>は、<phoneme type="ruby" ph="しゅみ">趣味</phoneme>や<phoneme type="ruby" ph="ぎょうむ">業務</phoneme>でプログラミングしている人の助けになることは間違いありません。</speak>
+<speak>コード部分は意識せず、要求した結果だけを<phoneme type="ruby" ph="かくにん">確認</phoneme>する使い方でも全く問題ないので、プログラミングに<phoneme type="ruby" ph="にがていしき">苦手意識</phoneme>のある人にとっても<phoneme type="ruby" ph="べんり">便利</phoneme>に活用できるはずです。</speak>
+<speak><phoneme type="ruby" ph="ようと">用途</phoneme>によっては<phoneme type="ruby" ph="にほんご">日本語</phoneme>対応がまだ<phoneme type="ruby" ph="ふじゅうぶん">不十分</phoneme>に<phoneme type="ruby" ph="かんじられる">感じられる</phoneme>部分はありますが、常に<phoneme type="ruby" ph="しんか">進化</phoneme>し続けている<phoneme type="ruby" ph="チャットジーピーティー">ChatGPT</phoneme>ですから、今後もどんどん<phoneme type="ruby" ph="かいぜん">改善</phoneme>して<phoneme type="ruby" ph="つかいやすく">使いやすく</phoneme>なっていくことでしょう。</speak>
