@@ -1,0 +1,12 @@
+<speak><phoneme type="ruby" ph="ちゃっとじーぴーてぃー">ChatGPT</phoneme>に「<phoneme type="ruby" ph="こーどいんたーぷりたー">Code Interpreter</phoneme>」という新機能が追加されました。</speak>
+<speak>その名の通りプログラミングコードの生成・実行が可能になるものです。</speak>
+<speak>プログラミングになじみのない人には縁遠いように思われるかもしれませんが、ユーザー自身がコードを書く必要はないので、むしろプログラミングがわからない人にこそ使ってほしい機能です。</speak>
+<speak>今回は、<phoneme type="ruby" ph="こーどいんたーぷりたー">Code Interpreter</phoneme>を利用することでどんなことができるのか、プログラミングがわからない人がどう活用できそうかなど、いくつか例を挙げながら解説していきたいと思います。</speak>
+<speak>初めに<phoneme type="ruby" ph="こーどいんたーぷりたー">Code Interpreter</phoneme>がどういうものなのか簡単に説明しましょう。</speak>
+<speak><phoneme type="ruby" ph="こーどいんたーぷりたー">Code Interpreter</phoneme>は<phoneme type="ruby" ph="ちゃっとじーぴーてぃー">ChatGPT</phoneme>の有償サービス「<phoneme type="ruby" ph="ちゃっとじーぴーてぃーぷらす">ChatGPT Plus</phoneme>」(月額20ドル)登録ユーザー向けに提供されている機能です。</speak>
+<speak><phoneme type="ruby" ph="2023">2023</phoneme>年<phoneme type="ruby" ph="8">8</phoneme>月現在は、設定画面の「<phoneme type="ruby" ph="べーたふぃーちゃーず">Beta features</phoneme>」から同機能をオンにすることで、<phoneme type="ruby" ph="じーぴーてぃー4">GPT-4</phoneme>によるチャットを新規に開始するときに利用できます。</speak>
+<speak>設定画面の「<phoneme type="ruby" ph="べーたふぃーちゃーず">Beta features</phoneme>」にある「<phoneme type="ruby" ph="こーどいんたーぷりたー">Code interpreter</phoneme>」をオンに「<phoneme type="ruby" ph="じーぴーてぃー4">GPT-4</phoneme>」を選び、「<phoneme type="ruby" ph="こーどいんたーぷりたー">Code Interpreter</phoneme>」をクリックして新規チャットを開始する <phoneme type="ruby" ph="こーどいんたーぷりたー">Code Interpreter</phoneme>を有効にした状態でチャットで質問・指示すると、これまで通り<phoneme type="ruby" ph="じーぴーてぃー4">GPT-4</phoneme>を用いた自然言語による回答を得ることができます。</speak>
+<speak>しかし回答にプログラミングによる処理が必要と判断されたときは、そのプログラムコードと処理内容の解説、さらにはそのコードを実行したときの処理結果まで表示してくれます。</speak>
+<speak>質問の回答にプログラム処理が必要なときは、コードと解説が表示され、必要に応じて実行結果も表示する 生成されるコードは<phoneme type="ruby" ph="ぱいそん">Python</phoneme>言語で、サーバー上の仮想的な<phoneme type="ruby" ph="ぱいそん">Python</phoneme>実行環境でそのコードが処理され、チャット画面に結果表示する仕組みです。</speak>
+<speak>そのため、ユーザーの端末に<phoneme type="ruby" ph="ぱいそん">Python</phoneme>や関連するライブラリなどがインストールされている必要はありません。</speak>
+<speak>誰でも<phoneme type="ruby" ph="ぱいそん">Python</phoneme>によるプログラムをお手軽かつ安全に生成・実行できるわけです。</speak>

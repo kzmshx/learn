@@ -6,12 +6,15 @@
   "license": "UNLICENSED",
   "author": "Kazumasa Hirata",
   "scripts": {
-    "main": "node index.js",
-    "up": "docker compose up -d",
-    "down": "docker compose down"
+    "extract-content": "node src/extract-content.js",
+    "text-to-speech": "node src/text-to-speech.js"
   },
   "dependencies": {
+    "@aws-sdk/client-polly": "^3.387.0",
     "@mozilla/readability": "^0.4.4",
+    "aws-sdk": "^2.1433.0",
+    "dotenv": "^16.3.1",
+    "fs": "0.0.1-security",
     "jsdom": "^22.1.0"
   },
   "devDependencies": {
