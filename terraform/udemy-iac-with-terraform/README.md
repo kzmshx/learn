@@ -1,3 +1,57 @@
 # udemy-iac-with-terraform
 
 https://www.udemy.com/course/iac-with-terraform/
+
+## Terraform
+
+### 基本コマンド
+
+- terraform plan
+  - インフラ構築の実行計画
+- terraform apply
+  - インフラ構築の適用
+- terraform destroy
+  - インフラ環境の削除
+
+## 基本ブロックタイプ
+
+| ブロックタイプ   | 概要                                    |
+|-----------|---------------------------------------|
+| locals    | 外部から変更不能なローカル変数。プライベートな変数。            |
+| variable  | 外部から変更可能な変数。コマンドオプションやファイル指定により上書きできる |
+| terraform | Terraformの設定                          |
+| provider  | プロバイダ                                 |
+| data      | Terraform管理対象外のリソース                   |
+| resource  | Terraformの管理対象のリソース                   |
+| output    | 外部から参照できるようにする値                       |
+
+## 変数の上書き
+
+環境変数 < 変数ファイル < コマンドライン引数
+
+コマンドライン引数が最優先。
+
+## リソースの参照
+
+リソース参照の記述
+
+```text
+<BLOCK_TYPE>.<LABEL_1>.<LABEL_2>
+```
+
+```terraform
+resource "aws_vpc" "vpc" {
+  # ...
+}
+
+resource "aws_subnet" "public_subnet_1a" {
+  vpc_id                  = aws_vpc.vpc.id
+  availability_zone       = "ap-northeast-1a"
+  cidr_block              = "192.168.1.0/24"
+  map_public_ip_on_launch = true
+}
+```
+
+## 組み込み関数
+
+[Functions - Configuration Language | Terraform](https://developer.hashicorp.com/terraform/language/functions)
