@@ -9,6 +9,13 @@ terraform {
       version = "~> 3.0"
     }
   }
+
+  backend "s3" {
+    bucket  = "tastylog-tfstate-bucket-kzmshx"
+    key     = "tastylog-dev.tfstate"
+    region  = "ap-northeast-1"
+    profile = "kzmshx_aws_test-terraform"
+  }
 }
 
 # ------------------------------
