@@ -1,4 +1,4 @@
-# udemy-iac-with-terraform
+# terraform/udemy-iac-with-terraform
 
 https://www.udemy.com/course/iac-with-terraform/
 
@@ -6,12 +6,18 @@ https://www.udemy.com/course/iac-with-terraform/
 
 ### 基本コマンド
 
+- terraform init
+  - 初期化
+  - `.terraform` ディレクトリが作成される
+  - `.terraform.lock.hcl` ファイルが作成される
 - terraform plan
   - インフラ構築の実行計画
 - terraform apply
   - インフラ構築の適用
 - terraform destroy
   - インフラ環境の削除
+- terraform fmt
+  - コードのフォーマット
 
 ## 基本ブロックタイプ
 
