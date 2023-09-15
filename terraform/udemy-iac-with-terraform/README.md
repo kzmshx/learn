@@ -125,3 +125,12 @@ https://www.toptal.com/developers/gitignore
     - Terraformでパスワードを管理できる
   - デメリット
     - 人に対する権限管理の管理が必要
+
+## AWS CLIでAMI検索
+
+```text
+$ aws ec2 describe-images
+    [--image-ids <value>]
+    [--owners <value>]
+    [--filters <value>]
+```
