@@ -144,3 +144,10 @@ $ aws ec2 describe-images
     [--owners <value>]
     [--filters <value>]
 ```
+
+## OS選択、ミドルウェアの設定のコード化
+
+Packerを使って実現可能
+
+- https://www.packer.io/
+- https://www.udemy.com/course/iac-by-packer-aws/
