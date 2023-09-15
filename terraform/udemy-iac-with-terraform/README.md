@@ -16,6 +16,16 @@ https://www.udemy.com/course/iac-with-terraform/
   - インフラ構築の適用
 - terraform destroy
   - インフラ環境の削除
+- terraform refresh
+  - tfstateの更新
+- terraform state list
+  - tfstateのリソース一覧
+- terraform state show
+  - tfstateのリソース詳細
+- terraform state mv
+  - tfstateのリソースの移動
+- terraform state rm
+  - tfstateのリソースの削除
 - terraform fmt
   - コードのフォーマット
 - terraform -install-autocomplete
