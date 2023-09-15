@@ -112,3 +112,16 @@ Hello Terraform
 https://www.toptal.com/developers/gitignore
 
 色んなソフトウェアの開発向けに使える `.gitignore` を生成してくれるサイト。
+
+## RDSのパスワード管理
+
+- あとからパスワード変更
+  - メリット
+    - パスワードをS3に保存tfstateにパスワードが含まれない
+  - デメリット
+    - Terraformでパスワードを管理できない
+- 運用回避（アクセス権限制御）
+  - メリット
+    - Terraformでパスワードを管理できる
+  - デメリット
+    - 人に対する権限管理の管理が必要
