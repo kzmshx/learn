@@ -1,5 +1,5 @@
 # ------------------------------
-# Policy Document
+# IAM Policy Document
 # ------------------------------
 data "aws_iam_policy_document" "ec2_assume_role" {
   statement {
