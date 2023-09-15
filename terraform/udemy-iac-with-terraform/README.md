@@ -96,3 +96,9 @@ Hello Terraform
 - CLI
   - 実装したコードの実行方法のドキュメント
   - → Docs > CLI
+
+## gitignore.io
+
+https://www.toptal.com/developers/gitignore
+
+色んなソフトウェアの開発向けに使える `.gitignore` を生成してくれるサイト。
