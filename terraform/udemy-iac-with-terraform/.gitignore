@@ -1,5 +1,10 @@
+# Terraform files
 **/.terraform/*
 *.tfstate
 *.tfstate.*
 *.tfvars
 *.tfvars.json
+
+# Src files
+src/tastylog-dev-keypair.pub
+src/tastylog-dev-keypair.pem
