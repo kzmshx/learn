@@ -18,6 +18,10 @@ https://www.udemy.com/course/iac-with-terraform/
   - インフラ環境の削除
 - terraform fmt
   - コードのフォーマット
+- terraform -install-autocomplete
+  - オートコンプリートのインストール
+- terraform -uninstall-autocomplete
+  - オートコンプリートのアンインストール
 
 ## 基本ブロックタイプ
 
