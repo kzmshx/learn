@@ -84,3 +84,15 @@ Hello Terraform
   ├── network.tf
   └── database.tf
   ```
+
+## Terraformのドキュメント構造
+
+- HCL2
+  - 言語本体のドキュメント
+  - → Docs > Language
+- Provider
+  - コードで利用するProviderのドキュメント
+  - → Terraform Registry
+- CLI
+  - 実装したコードの実行方法のドキュメント
+  - → Docs > CLI
