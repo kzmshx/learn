@@ -55,3 +55,32 @@ resource "aws_subnet" "public_subnet_1a" {
 ## 組み込み関数
 
 [Functions - Configuration Language | Terraform](https://developer.hashicorp.com/terraform/language/functions)
+
+```
+$ terraform console
+> floor(3.14)
+3
+> substr("abcdef", 2, 3)
+cde
+> format("Hello %s", "Terraform")
+Hello Terraform
+```
+
+## ファイル分割
+
+- `terraform apply` はカレントディレクトリ内の `.tf` ファイルをすべて読み込む。
+- `terraform apply` はディレクトリを再帰的には読み込まない。
+- 基本構成は `main.tf` と `terraform.tfvars` の2ファイル。
+  ```text
+  .
+  ├── main.tf
+  └── terraform.tfvars
+  ```
+- `main.tf` が大きくなったら、ファイルを分割する。
+  ```text
+  .
+  ├── main.tf
+  ├── terraform.tfvars
+  ├── network.tf
+  └── database.tf
+  ```
