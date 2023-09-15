@@ -2,9 +2,9 @@
 
 https://www.udemy.com/course/iac-with-terraform/
 
-## Terraform
+## メモ
 
-### 基本コマンド
+### Terraform CLI
 
 - terraform init
   - 初期化
@@ -33,7 +33,7 @@ https://www.udemy.com/course/iac-with-terraform/
 - terraform -uninstall-autocomplete
   - オートコンプリートのアンインストール
 
-## 基本ブロックタイプ
+### HCL2 ブロックタイプ
 
 | ブロックタイプ   | 概要                                    |
 |-----------|---------------------------------------|
@@ -45,13 +45,13 @@ https://www.udemy.com/course/iac-with-terraform/
 | resource  | Terraformの管理対象のリソース                   |
 | output    | 外部から参照できるようにする値                       |
 
-## 変数の上書き
+### HCL2 変数の上書き
 
 環境変数 < 変数ファイル < コマンドライン引数
 
 コマンドライン引数が最優先。
 
-## リソースの参照
+### HCL2 リソースの参照
 
 リソース参照の記述
 
@@ -72,7 +72,7 @@ resource "aws_subnet" "public_subnet_1a" {
 }
 ```
 
-## 組み込み関数
+### HCL2 組み込み関数
 
 [Functions - Configuration Language | Terraform](https://developer.hashicorp.com/terraform/language/functions)
 
@@ -86,7 +86,7 @@ cde
 Hello Terraform
 ```
 
-## ファイル分割
+### HCL2 ファイル分割
 
 - `terraform apply` はカレントディレクトリ内の `.tf` ファイルをすべて読み込む。
 - `terraform apply` はディレクトリを再帰的には読み込まない。
@@ -105,7 +105,7 @@ Hello Terraform
   └── database.tf
   ```
 
-## Terraformのドキュメント構造
+### Terraform のドキュメント構造
 
 - HCL2
   - 言語本体のドキュメント
@@ -117,13 +117,13 @@ Hello Terraform
   - 実装したコードの実行方法のドキュメント
   - → Docs > CLI
 
-## gitignore.io
+### gitignore.io
 
 https://www.toptal.com/developers/gitignore
 
 色んなソフトウェアの開発向けに使える `.gitignore` を生成してくれるサイト。
 
-## RDSのパスワード管理
+### RDSのパスワード管理
 
 - あとからパスワード変更
   - メリット
@@ -136,7 +136,7 @@ https://www.toptal.com/developers/gitignore
   - デメリット
     - 人に対する権限管理の管理が必要
 
-## AWS CLIでAMI検索
+### AWS CLIでAMI検索
 
 ```text
 $ aws ec2 describe-images
@@ -145,7 +145,7 @@ $ aws ec2 describe-images
     [--filters <value>]
 ```
 
-## OS選択、ミドルウェアの設定のコード化
+### OS選択、ミドルウェアの設定のコード化
 
 Packerを使って実現可能
 
