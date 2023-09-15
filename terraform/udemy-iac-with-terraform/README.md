@@ -147,7 +147,13 @@ $ aws ec2 describe-images
 
 ### OS選択、ミドルウェアの設定のコード化
 
-Packerを使って実現可能
+- Packerを使って実現可能
+  - https://www.packer.io/
+  - https://www.udemy.com/course/iac-by-packer-aws/
 
-- https://www.packer.io/
-- https://www.udemy.com/course/iac-by-packer-aws/
+### MacでZipをクリックで.zipを解凍したら、中身の.tarまで解凍されてしまう
+
+- ZIPだけ解凍して解決
+  ```text
+  $ unzip foo.zip
+  ```
