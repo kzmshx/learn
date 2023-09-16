@@ -8,7 +8,7 @@ data "aws_ami" "app" {
 
   filter {
     name   = "name"
-    values = ["al2023-ami-2023.1.*.0-kernel-6.1-x86_64"]
+    values = ["amzn2-ami-kernel-5.10-hvm-2.0.*.0-x86_64-gp2"]
   }
 
   filter {
