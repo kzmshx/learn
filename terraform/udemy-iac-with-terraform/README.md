@@ -6,32 +6,20 @@ https://www.udemy.com/course/iac-with-terraform/
 
 ### Terraform CLI
 
-- terraform init
-  - 初期化
-  - `.terraform` ディレクトリが作成される
-  - `.terraform.lock.hcl` ファイルが作成される
-- terraform plan
-  - インフラ構築の実行計画
-- terraform apply
-  - インフラ構築の適用
-- terraform destroy
-  - インフラ環境の削除
-- terraform refresh
-  - tfstateの更新
-- terraform state list
-  - tfstateのリソース一覧
-- terraform state show
-  - tfstateのリソース詳細
-- terraform state mv
-  - tfstateのリソースの移動
-- terraform state rm
-  - tfstateのリソースの削除
-- terraform fmt
-  - コードのフォーマット
-- terraform -install-autocomplete
-  - オートコンプリートのインストール
-- terraform -uninstall-autocomplete
-  - オートコンプリートのアンインストール
+| コマンド                    | 概要                                                                   |
+|-------------------------|----------------------------------------------------------------------|
+| init                    | 初期化<br>`.terraform` ディレクトリが作成される<br>`.terraform.lock.hcl` ファイルが作成される |
+| plan                    | インフラ構築の実行計画                                                          |
+| apply                   | インフラ構築の適用                                                            |
+| destroy                 | インフラ環境の削除                                                            |
+| refresh                 | tfstateの更新                                                           |
+| state list              | tfstateのリソース一覧                                                       |
+| state show              | tfstateのリソース詳細                                                       |
+| state mv                | tfstateのリソースの移動                                                      |
+| state rm                | tfstateのリソースの削除                                                      |
+| fmt                     | コードのフォーマット                                                           |
+| -install-autocomplete   | オートコンプリートのインストール                                                     |
+| -uninstall-autocomplete | オートコンプリートのアンインストール                                                   |
 
 ### HCL2 ブロックタイプ
 
@@ -104,6 +92,43 @@ Hello Terraform
   ├── network.tf
   └── database.tf
   ```
+
+### HCL2 メタ引数
+
+#### depends_on
+
+Terraformが自動的に依存関係を解決できない場合に明示的に依存関係を定義する。
+
+#### count
+
+指定した数の複数リソースを作成する。
+
+- `count.index` でインデックスを参照できる。
+
+#### for_each
+
+指定したmapまたはsetを展開して、複数のリソースを作成する。
+
+- listは展開できないため、mapまたはsetに変換する必要がある。（`toset()` または `tomap()`）
+- `each.key` でキーを参照できる。
+- `each.value` で値を参照できる。
+
+#### lifecycle
+
+リソースの作成や削除のタイミングを制御する。
+
+- `create_before_destroy = true` でリソースの削除前に作成する。
+- `prevent_destroy = true` でリソースの削除を禁止する。
+- `ignore_changes = [ <ATTRIBUTE> ]` で指定した属性の変更を無視する。
+
+Terraformのインフラ操作には以下の4つのタイミングがある。
+
+- create: リソースの作成
+- destroy: リソースの削除
+- update: リソースの更新
+- destroy & recreate: リソースの削除と再作成（リソースの更新ができない場合）
+
+lifecycleメタ引数はこのライフサイクル管理をより細かく制御するためのもの。
 
 ### Terraform のドキュメント構造
 
