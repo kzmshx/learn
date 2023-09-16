@@ -163,20 +163,43 @@ $ aws ec2 describe-images
 ### EC2のAPサーバーのセットアップ
 
 ```shell
-scp -i ./src/tastylog-dev-keypair.pem ./src/tastylog-mw-all-1.0.0.tar.gz ec2-user@<IP_ADDRESS>:/home/ec2-user
-ssh -i ./src/tastylog-dev-keypair.pem ec2-user@<IP_ADDRESS>
+# ------------------------------
+# In Local
+# ------------------------------
+IP_ADDRESS=<IP_ADDRESS>
 
+scp -i ./src/tastylog-dev-keypair.pem ./src/tastylog-mw-all-1.0.0.tar.gz ec2-user@${IP_ADDRESS}:/home/ec2-user
+scp -i ./src/tastylog-dev-keypair.pem ./src/tastylog-app-1.8.1.tar.gz ec2-user@${IP_ADDRESS}:/home/ec2-user
+ssh -i ./src/tastylog-dev-keypair.pem ec2-user@${IP_ADDRESS}
+```
+
+```shell
+# ------------------------------
+# In App Server
+# ------------------------------
 pwd # /home/ec2-user
 sudo yum update -y
 
+# Setup middleware
 mkdir middleware
-ls # middleware tastylog-mw-all-1.0.0.tar.gz
-
 tar -zxvf tastylog-mw-all-1.0.0.tar.gz -C middleware
 
 cd middleware
 sudo sh ./install.sh
-
 cd ../
-rm -rf middleware tastylog-mw-all-1.0.0.tar.gz
+
+# Start web server
+mkdir tastylog
+tar -zxvf tastylog-app-1.8.1.tar.gz -C tastylog
+
+sudo mv tastylog /opt
+sudo systemctl enable tastylog
+sudo systemctl start tastylog
+sudo systemctl status tastylog
+
+# Clean up
+rm -rf \
+  middleware \
+  tastylog-mw-all-1.0.0.tar.gz \
+  tastylog-app-1.8.1.tar.gz
 ```
