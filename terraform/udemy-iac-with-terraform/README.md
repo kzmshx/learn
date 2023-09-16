@@ -2,7 +2,7 @@
 
 https://www.udemy.com/course/iac-with-terraform/
 
-## メモ
+## 知識メモ
 
 ### Terraform CLI
 
@@ -151,9 +151,32 @@ $ aws ec2 describe-images
   - https://www.packer.io/
   - https://www.udemy.com/course/iac-by-packer-aws/
 
+## 作業メモ
+
 ### MacでZipをクリックで.zipを解凍したら、中身の.tarまで解凍されてしまう
 
 - ZIPだけ解凍して解決
   ```text
   $ unzip foo.zip
   ```
+
+### EC2のAPサーバーのセットアップ
+
+```shell
+scp -i ./src/tastylog-dev-keypair.pem ./src/tastylog-mw-all-1.0.0.tar.gz ec2-user@<IP_ADDRESS>:/home/ec2-user
+ssh -i ./src/tastylog-dev-keypair.pem ec2-user@<IP_ADDRESS>
+
+pwd # /home/ec2-user
+sudo yum update -y
+
+mkdir middleware
+ls # middleware tastylog-mw-all-1.0.0.tar.gz
+
+tar -zxvf tastylog-mw-all-1.0.0.tar.gz -C middleware
+
+cd middleware
+sudo sh ./install.sh
+
+cd ../
+rm -rf middleware tastylog-mw-all-1.0.0.tar.gz
+```
