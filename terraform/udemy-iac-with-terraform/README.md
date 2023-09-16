@@ -106,6 +106,21 @@ Terraformが自動的に依存関係を解決できない場合に明示的に�
 
 - `count.index` でインデックスを参照できる。
 
+#### for
+
+リスト型（list, map, set）を異なるリスト型（list, map）に変換する。
+
+PythonのList Comprehensionと同じようなもの。
+
+- list to list: `[for s in var.list: upper(s)]`
+- list to map: `{for s in var.list: s => upper(s)}`
+- map to list: `[for k, v in var.map: upper(v)]`
+- map to map: `{for k, v in var.map: k => upper(v)}`
+- set to list: `[for s in var.set: upper(s)]`
+- filtering: `[for s in var.list: s if s != "foo"]`
+  - `else` や `elif` はない。
+- etc.
+
 #### for_each
 
 指定したmapまたはsetを展開して、複数のリソースを作成する。
