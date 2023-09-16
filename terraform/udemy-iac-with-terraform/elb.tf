@@ -9,6 +9,17 @@ resource "aws_lb" "alb" {
   subnets            = [aws_subnet.public_subnet_1a.id, aws_subnet.public_subnet_1c.id]
 }
 
+resource "aws_lb_listener" "alb_listener_http" {
+  load_balancer_arn = aws_lb.alb.arn
+  port              = 80
+  protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.alb_target_group.arn
+  }
+}
+
 # ------------------------------
 # ALB Target Group
 # ------------------------------
