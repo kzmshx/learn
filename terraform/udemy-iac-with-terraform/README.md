@@ -18,6 +18,7 @@ https://www.udemy.com/course/iac-with-terraform/
 | state mv                | tfstateのリソースの移動                                                      |
 | state rm                | tfstateのリソースの削除                                                      |
 | fmt                     | コードのフォーマット                                                           |
+| graph                   | インフラ構築の依存関係グラフの出力                                                    |
 | -install-autocomplete   | オートコンプリートのインストール                                                     |
 | -uninstall-autocomplete | オートコンプリートのアンインストール                                                   |
 
