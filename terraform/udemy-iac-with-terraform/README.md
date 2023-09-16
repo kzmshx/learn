@@ -155,10 +155,11 @@ $ aws ec2 describe-images
 
 ### MacでZipをクリックで.zipを解凍したら、中身の.tarまで解凍されてしまう
 
-- ZIPだけ解凍して解決
-  ```text
-  $ unzip foo.zip
-  ```
+→ ZIPだけ解凍して解決
+
+```shell
+unzip foo.zip
+```
 
 ### EC2のAPサーバーのセットアップ
 
