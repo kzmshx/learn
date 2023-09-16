@@ -26,6 +26,12 @@ provider "aws" {
   region  = "ap-northeast-1"
 }
 
+provider "aws" {
+  alias   = "virginia"
+  profile = "kzmshx_aws_test-terraform"
+  region  = "us-east-1"
+}
+
 # ------------------------------
 # Variables
 # ------------------------------
