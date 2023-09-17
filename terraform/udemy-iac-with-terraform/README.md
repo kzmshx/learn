@@ -192,6 +192,27 @@ $ aws ec2 describe-images
   - https://www.packer.io/
   - https://www.udemy.com/course/iac-by-packer-aws/
 
+### Providerを複数利用する
+
+aliasを使うことで、複数のProviderを利用できる。
+
+```terraform
+provider "aws" {
+  region = "us-east-1"
+}
+
+provider "aws" {
+  alias  = "tokyo"
+  region = "ap-northeast-1"
+}
+
+resource "aws_instance" "web" {
+  provider = aws.tokyo # aliasを指定して、ap-northeast-1のProviderを利用する
+
+  # ...
+}
+```
+
 ## 作業メモ
 
 ### MacでZipをクリックで.zipを解凍したら、中身の.tarまで解凍されてしまう
