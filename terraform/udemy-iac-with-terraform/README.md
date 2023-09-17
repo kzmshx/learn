@@ -213,6 +213,11 @@ resource "aws_instance" "web" {
 }
 ```
 
+### S3のパブリックアクセスブロックがデフォルトで有効になった（2023−04）件の対応
+
+- https://blog.serverworks.co.jp/s3_bucket_public_access_block_202204
+- https://zenn.dev/hige/articles/01b69444ccaa3d
+
 ## 作業メモ
 
 ### MacでZipをクリックで.zipを解凍したら、中身の.tarまで解凍されてしまう
