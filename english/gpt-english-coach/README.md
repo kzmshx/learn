@@ -5,6 +5,26 @@
 日本語文と英語文を入力すると、英作文のアドバイスを出力してくれる。
 
 ```text
+$ gpt-english-coach -h
+   ____ ____ _____   _____             _ _     _        ____                 _
+  / ___|  _ \_   _| | ____|_ __   __ _| (_)___| |__    / ___|___   __ _  ___| |__
+ | |  _| |_) || |   |  _| | '_ \ / _` | | / __| '_ \  | |   / _ \ / _` |/ __| '_ \
+ | |_| |  __/ | |   | |___| | | | (_| | | \__ \ | | | | |__| (_) | (_| | (__| | | |
+  \____|_|    |_|   |_____|_| |_|\__, |_|_|___/_| |_|  \____\___/ \__,_|\___|_| |_|
+                                 |___/
+
+Usage: gpt-english-coach [options] [japanese] [english]
+
+Arguments:
+  japanese       日本語文
+  english        英作文
+
+Options:
+  -V, --version  output the version number
+  -h, --help     display help for command
+```
+
+```text
 $ gpt-english-coach
 日本語: 渋谷駅まで30分程度ウォーキングした
 英作文: I had a walking to Shibuya station approximately for 30 minutes.
