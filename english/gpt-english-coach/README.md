@@ -30,24 +30,26 @@ $ gpt-english-coach
 英作文: I had a walking to Shibuya station approximately for 30 minutes.
 アドバイス:
 ### 文法の間違い
-- had a walking → walked
+- had a walking
+  - 理由: "had"は"walk"という動詞とは合わない
+  - 適切な表現: "walked"
 
 ### 単語の意味やニュアンスの不適切な箇所
-- approximately → about
+- approximately
+  - 理由: "approximately"は正確な時間を表すのには適切ではない
+  - 適切な表現: "about" or "around"
 
 ### 修正例
 I walked to Shibuya station for about 30 minutes.
 
 ### 他の表現例
-- I strolled to Shibuya station for approximately 30 minutes.
-- I took a leisurely walk to Shibuya station, which took about 30 minutes.
-- It took me around 30 minutes to walk to Shibuya station.
+- I took a 30-minute walk to Shibuya station.
+- It took me approximately 30 minutes to walk to Shibuya station.
+- I spent around 30 minutes walking to Shibuya station.
 
-### 長い日本語文
-渋谷駅まで30分程度ウォーキングした後、友達と会ってランチを食べました。その後、ショッピングをして帰りました。
-
-### 長い英作文
-After walking to Shibuya station for about 30 minutes, I met up with a friend and had lunch. Then, we went shopping before heading back.
+### 発展
+日本語: 渋谷駅まで30分程度ウォーキングした。その後、友達と会ってランチを食べた。
+英作文: I walked to Shibuya station for about 30 minutes. After that, I met up with a friend and had lunch.
 ```
 
 ## 開発
