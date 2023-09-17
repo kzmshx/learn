@@ -29,6 +29,14 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "s3_static_bucket"
   }
 }
 
+resource "aws_s3_bucket_public_access_block" "s3_static_bucket" {
+  bucket                  = aws_s3_bucket.s3_static_bucket.id
+  block_public_acls       = true
+  block_public_policy     = false
+  ignore_public_acls      = true
+  restrict_public_buckets = false
+}
+
 data "aws_iam_policy_document" "allow_public_access" {
   statement {
     effect    = "Allow"
@@ -48,12 +56,4 @@ resource "aws_s3_bucket_policy" "s3_static_bucket" {
   depends_on = [
     aws_s3_bucket_public_access_block.s3_static_bucket
   ]
-}
-
-resource "aws_s3_bucket_public_access_block" "s3_static_bucket" {
-  bucket                  = aws_s3_bucket.s3_static_bucket.id
-  block_public_acls       = true
-  block_public_policy     = false
-  ignore_public_acls      = true
-  restrict_public_buckets = false
 }
