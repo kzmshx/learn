@@ -32,9 +32,9 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "s3_static_bucket"
 resource "aws_s3_bucket_public_access_block" "s3_static_bucket" {
   bucket                  = aws_s3_bucket.s3_static_bucket.id
   block_public_acls       = true
-  block_public_policy     = false
+  block_public_policy     = true
   ignore_public_acls      = true
-  restrict_public_buckets = false
+  restrict_public_buckets = true
 }
 
 data "aws_iam_policy_document" "allow_public_access" {
@@ -43,8 +43,8 @@ data "aws_iam_policy_document" "allow_public_access" {
     actions   = ["s3:GetObject"]
     resources = ["${aws_s3_bucket.s3_static_bucket.arn}/*"]
     principals {
-      type        = "*"
-      identifiers = ["*"]
+      type        = "AWS"
+      identifiers = [aws_cloudfront_origin_access_identity.cf_s3_origin_access_identity.iam_arn]
     }
   }
 }
