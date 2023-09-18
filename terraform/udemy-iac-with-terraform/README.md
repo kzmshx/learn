@@ -218,6 +218,37 @@ resource "aws_instance" "web" {
 - https://blog.serverworks.co.jp/s3_bucket_public_access_block_202204
 - https://zenn.dev/hige/articles/01b69444ccaa3d
 
+### GPGでのキーの生成、暗号化、復号
+
+1. gpgインストール
+   ```text
+   $ brew install gpg
+   ```
+2. キーの生成
+   ```text
+   $ gpg --gen-key
+   gpg (GnuPG) 2.4.3; Copyright (C) 2023 g10 Code GmbH
+   This is free software: you are free to change and redistribute it.
+   There is NO WARRANTY, to the extent permitted by law.
+
+   ...
+
+   Real name: master
+   Email address: master@sample.com
+   You selected this USER-ID:
+   "master <master@sample.com>"
+
+   ...
+   ```
+3. 暗号化
+   ```text
+    $ echo "Hello, world!" | gpg -r master --encrypt | base64 > encrypted.txt
+    ```
+4. 復号
+    ```text
+    $ cat encrypted.txt | base64 --decode | gpg -r master --decrypt
+    ```
+
 ## 作業メモ
 
 ### MacでZipをクリックで.zipを解凍したら、中身の.tarまで解凍されてしまう
