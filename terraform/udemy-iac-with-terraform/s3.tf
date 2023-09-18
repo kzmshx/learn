@@ -10,7 +10,8 @@ resource "random_string" "s3_unique_key" {
 # S3 Static Bucket
 # ------------------------------
 resource "aws_s3_bucket" "s3_static_bucket" {
-  bucket = "${var.project}-${var.environment}-static-bucket-${random_string.s3_unique_key.result}"
+  bucket        = "${var.project}-${var.environment}-static-bucket-${random_string.s3_unique_key.result}"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_versioning" "s3_static_bucket" {
@@ -62,7 +63,8 @@ resource "aws_s3_bucket_policy" "s3_static_bucket" {
 # S3 Deploy Bucket
 # ------------------------------
 resource "aws_s3_bucket" "s3_deploy_bucket" {
-  bucket = "${var.project}-${var.environment}-deploy-bucket-${random_string.s3_unique_key.result}"
+  bucket        = "${var.project}-${var.environment}-deploy-bucket-${random_string.s3_unique_key.result}"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_versioning" "s3_deploy_bucket" {

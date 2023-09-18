@@ -90,8 +90,8 @@ resource "aws_db_instance" "mysql_standalone" {
   auto_minor_version_upgrade = false
 
   # 誤操作防止
-  deletion_protection = true
-  skip_final_snapshot = false
+  deletion_protection = false
+  skip_final_snapshot = true
 
   apply_immediately = true
 
