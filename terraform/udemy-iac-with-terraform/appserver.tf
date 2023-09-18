@@ -100,3 +100,33 @@ resource "aws_launch_template" "app_server_lt" {
     name = aws_iam_instance_profile.app_iam_instance_profile.name
   }
 }
+
+# ------------------------------
+# Auto Scaling Group
+# ------------------------------
+resource "aws_autoscaling_group" "app_server_asg" {
+  name = "${var.project}-${var.environment}-app-server-asg"
+
+  max_size         = 1
+  min_size         = 1
+  desired_capacity = 1
+
+  health_check_grace_period = 300
+  health_check_type         = "ELB"
+
+  vpc_zone_identifier = [aws_subnet.public_subnet_1a.id, aws_subnet.public_subnet_1c.id]
+  target_group_arns   = [aws_lb_target_group.alb_target_group.arn]
+
+  mixed_instances_policy {
+    launch_template {
+      launch_template_specification {
+        launch_template_id = aws_launch_template.app_server_lt.id
+        version            = "$Latest"
+      }
+
+      override {
+        instance_type = "t2.micro"
+      }
+    }
+  }
+}
