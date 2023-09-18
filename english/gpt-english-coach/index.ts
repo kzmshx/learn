@@ -16,6 +16,7 @@ const prompt = (japanese: string, english: string): string => `\\
 - 指摘に沿ってより適切な英作文を生成せよ
 - 日本語文に対する英作文の他の表現例を3個生成せよ
 - 日本語文に1つの新しい文を追加した長い文章を生成し、それに対する英作文を生成せよ
+- 最後に、英作文に対してあなたがしたい質問を1つ生成せよ
 
 // 日本語
 ${japanese}
@@ -47,6 +48,9 @@ ${english}
 日本語: <長い日本語文>
 英作文: <長い英作文>
 
+### 質問
+日本語: <質問の日本語文>
+英作文: <質問の英作文>
 // 出力`;
 
 const run = async (japanese?: string, english?: string): Promise<void> => {
