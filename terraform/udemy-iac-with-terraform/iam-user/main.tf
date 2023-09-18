@@ -40,3 +40,7 @@ variable "environment" {
 variable "domain" {
   type = string
 }
+
+variable "user_name" {
+  type = string
+}
