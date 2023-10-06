@@ -27,6 +27,14 @@ init: setup-terraform
 		-backend-config="key=${TFSTATE_KEY}" \
 		-backend-config="region=${REGION}"
 
+.PHONY: init-reconfigure
+init-reconfigure: setup-terraform
+	@cd terraform && terraform init \
+		-reconfigure \
+		-backend-config="bucket=${TFSTATE_BUCKET}" \
+		-backend-config="key=${TFSTATE_KEY}" \
+		-backend-config="region=${REGION}"
+
 .PHONY: plan
 plan: setup-terraform
 	@cd terraform && terraform plan \
