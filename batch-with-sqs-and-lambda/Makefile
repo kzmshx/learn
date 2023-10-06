@@ -10,40 +10,37 @@ SHELL             = /bin/bash
 TERRAFORM_VERSION = 1.6.0
 TFSTATE_BUCKET    = batch-with-sqs-and-lambda-tfstate
 TFSTATE_KEY       = batch-with-sqs-and-lambda.tfstate
-REGION    = ap-northest-1
+REGION            = ap-northeast-1
 
 # ------------------------------
 # Terraform
 # ------------------------------
-.PHONE: cd-terraform
-cd-terraform:
-	@cd terraform
-
 .PHONY: setup-terraform
 setup-terraform:
 	@tfenv install ${TERRAFORM_VERSION}
 	@tfenv use ${TERRAFORM_VERSION}
 
 .PHONY: init
-init: cd-terraform setup-terraform
-	@terraform init \
+init: setup-terraform
+	@cd terraform && terraform init \
 		-backend-config="bucket=${TFSTATE_BUCKET}" \
 		-backend-config="key=${TFSTATE_KEY}" \
 		-backend-config="region=${REGION}"
 
 .PHONY: plan
-plan: cd-terraform setup-terraform
-	@terraform plan \
+plan: setup-terraform
+	@cd terraform && terraform plan \
 		-var "region=${REGION}"
 
 .PHONY: apply
-apply: cd-terraform setup-terraform
-	@terraform apply \
-		-var "region=${REGION}"
+apply: setup-terraform
+	@cd terraform && terraform apply \
+		-var "region=${REGION}" \
+		-auto-approve
 
 .PHONY: destroy
-destroy: cd-terraform setup-terraform
-	@terraform destroy \
+destroy: setup-terraform
+	@cd terraform && terraform destroy \
 		-var "region=${REGION}"
 
 # ------------------------------
