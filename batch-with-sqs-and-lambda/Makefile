@@ -17,8 +17,8 @@ REGION            = ap-northeast-1
 # ------------------------------
 .PHONY: setup-terraform
 setup-terraform:
-	@tfenv install ${TERRAFORM_VERSION}
-	@tfenv use ${TERRAFORM_VERSION}
+	@tfenv install ${TERRAFORM_VERSION} >&2
+	@tfenv use ${TERRAFORM_VERSION} >&2
 
 .PHONY: init
 init: setup-terraform
@@ -42,6 +42,11 @@ apply: setup-terraform
 destroy: setup-terraform
 	@cd terraform && terraform destroy \
 		-var "region=${REGION}"
+
+.PHONY: output
+output: setup-terraform
+	@cd terraform && terraform output \
+		-json
 
 # ------------------------------
 # Shell scripts
