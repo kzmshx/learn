@@ -16,7 +16,7 @@ Amazon SQSとAWS Lambdaを使ったバッチ処理アーキテクチャのサン
 
 ### 補足
 
-Terraformの基本を身につけるたい人は [AWSとTerraformで実現するInfrastructure as Code | Udemy](https://www.udemy.com/course/iac-with-terraform/) を受講して実際に手を動かしてみるのが非常におすすめ。
+Terraformの基本を身につけたい人は [AWSとTerraformで実現するInfrastructure as Code | Udemy](https://www.udemy.com/course/iac-with-terraform/) を受講して実際に手を動かしてみるのが非常におすすめ。
 
 ## 技術スタック
 
