@@ -16,10 +16,6 @@ Amazon SQSとAWS Lambdaを使ったバッチ処理アーキテクチャのサン
 
 ```text
 .
-├── terraform/
-│   ├── main.tf           # リソース定義
-│   ├── variables.tf      # 変数定義
-│   ├── outputs.tf        # 出力定義
 ├── lambda/
 │   ├── function.py
 │   ├── requirements.txt
@@ -27,5 +23,9 @@ Amazon SQSとAWS Lambdaを使ったバッチ処理アーキテクチャのサン
 ├── scripts/
 │   ├── upload.sh         # 入力用S3バケットに画像をアップロードする
 │   └── download.sh       # 出力用S3バケットから処理された画像をダウンロードする
+├── terraform/
+│   ├── main.tf           # リソース定義
+│   ├── variables.tf      # 変数定義
+│   └── outputs.tf        # 出力定義
 └── Makefile
 ```
