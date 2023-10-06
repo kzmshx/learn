@@ -6,6 +6,18 @@ Amazon SQSとAWS Lambdaを使ったバッチ処理アーキテクチャのサン
 
 入力用のS3バケットに画像ファイルをアップロードすると、イベント通知によりSQSにメッセージが送信される。Lambdaのイベントソースマッピングにより、SQSからメッセージを受け取るとLambdaが起動し、画像を加工して出力用S3バケットに保存する。
 
+## 前提
+
+- AWSアカウントが作成されている
+- AWS CLIがインストールされている
+- AWS CLIの設定が完了している
+- Terraformがインストールされている
+- Terraformについての基本的な知識がある
+
+### 補足
+
+Terraformの基本を身につけるたい人は [AWSとTerraformで実現するInfrastructure as Code | Udemy](https://www.udemy.com/course/iac-with-terraform/) を受講して実際に手を動かしてみるのが非常におすすめ。
+
 ## 技術スタック
 
 - Amazon S3
