@@ -1,4 +1,4 @@
-# kudos
+# prisma-kudos
 
 ## 資料
 
