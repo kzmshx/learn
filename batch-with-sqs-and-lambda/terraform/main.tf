@@ -29,6 +29,11 @@ locals {
 }
 
 # ------------------------------
+# Caller Identity
+# ------------------------------
+data "aws_caller_identity" "this" {}
+
+# ------------------------------
 # IAM Role
 # ------------------------------
 data "aws_iam_policy_document" "lambda_assume_role_policy" {
