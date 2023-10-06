@@ -1,4 +1,4 @@
-# english/gpt-english-coach
+# gpt-english-coach
 
 ## 機能
 
