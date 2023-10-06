@@ -13,6 +13,13 @@ TFSTATE_KEY       = batch-with-sqs-and-lambda.tfstate
 REGION            = ap-northeast-1
 
 # ------------------------------
+# Env
+# ------------------------------
+.PHONY: env
+env:
+	@cp -n $(ENV_PATH).tpl $(ENV_PATH)
+
+# ------------------------------
 # Terraform
 # ------------------------------
 .PHONY: setup-terraform
