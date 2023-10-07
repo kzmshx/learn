@@ -1,0 +1,20 @@
+{
+  "name": "lambda",
+  "version": "0.1.0",
+  "description": "Lambda Function",
+  "license": "UNLICENSED",
+  "author": "Kazumasa Hirata",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "fmt": "prettier '**/*.js' --write",
+    "install-for-lambda": "npm install --arch=x64 --platform=linux"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.427.0",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  }
+}
