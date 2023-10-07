@@ -147,6 +147,19 @@ resource "aws_s3_bucket_acl" "output" {
 }
 
 # ------------------------------
+# S3 Bucket Notification
+# ------------------------------
+resource "aws_s3_bucket_notification" "to_queue" {
+  bucket = aws_s3_bucket.input.bucket
+
+  queue {
+    queue_arn     = aws_sqs_queue.queue.arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".jpg"
+  }
+}
+
+# ------------------------------
 # SQS Queue
 # ------------------------------
 resource "aws_sqs_queue" "queue" {
@@ -158,6 +171,29 @@ resource "aws_sqs_queue" "queue" {
     Name    = "${local.project}-queue"
     Project = local.project
   }
+}
+
+data "aws_iam_policy_document" "queue" {
+  statement {
+    actions   = ["sqs:SendMessage"]
+    resources = [aws_sqs_queue.queue.arn]
+
+    principals {
+      type        = "Service"
+      identifiers = ["s3.amazonaws.com"]
+    }
+
+    condition {
+      test     = "ArnLike"
+      variable = "aws:SourceArn"
+      values   = [aws_s3_bucket.input.arn]
+    }
+  }
+}
+
+resource "aws_sqs_queue_policy" "queue" {
+  queue_url = aws_sqs_queue.queue.url
+  policy    = data.aws_iam_policy_document.queue.json
 }
 
 # ------------------------------
