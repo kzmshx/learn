@@ -1,5 +1,7 @@
 .env
 
+scripts/output_images/
+
 terraform/builds/
 
 # Terraform files
