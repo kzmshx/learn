@@ -214,7 +214,6 @@ module "lambda_function" {
   environment_variables = {
     INPUT_BUCKET  = aws_s3_bucket.input.bucket
     OUTPUT_BUCKET = aws_s3_bucket.output.bucket
-    SQS_QUEUE_URL = aws_sqs_queue.queue.url
   }
 
   create_role = false
