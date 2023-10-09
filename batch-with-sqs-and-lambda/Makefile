@@ -68,8 +68,8 @@ output: setup-terraform
 # ------------------------------
 .PHONY: upload
 upload:
-	@bash scripts/upload.sh
+	@bash scripts/upload_inputs.sh
 
 .PHONY: download
 download:
-	@bash scripts/download.sh
+	@bash scripts/download_outputs.sh
