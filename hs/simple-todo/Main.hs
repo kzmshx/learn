@@ -17,7 +17,16 @@ displayItems items =
    in unlines displayItemsList
 
 -- removeItem returns a new list without the item at the given index, if not found returns an error message.
--- removeItem :: Int -> Items -> Either String Items
+removeItem :: Int -> Items -> Either String Items
+removeItem reverseIndex allItems =
+  impl (length allItems - reverseIndex) allItems
+  where
+    impl index items = case (index, items) of
+      (0, item : rest) -> Right rest
+      (n, []) -> Left "Index out of bounds."
+      (n, item : rest) -> case impl (n - 1) rest of
+        Right newItems -> Right (item : newItems)
+        Left err -> Left err
 
 data Command
   = AddItem String
