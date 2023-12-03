@@ -28,11 +28,14 @@ interactWithUser items = do
   putStrLn ""
   putStrLn "ToDo List:"
   putStrLn (displayItems newItems)
-  pure newItems
+  interactWithUser newItems
 
 main :: IO ()
 main = do
   putStrLn "ToDo App"
+  putStrLn ""
+
   let initialList = []
   interactWithUser initialList
+
   pure ()
