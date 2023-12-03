@@ -30,6 +30,7 @@ removeItem reverseIndex allItems =
 
 data Command
   = AddItem String
+  | DoneItem Int
   | ListItems
   | Help
   | Quit
@@ -37,6 +38,10 @@ data Command
 parseCommand :: String -> Either String Command
 parseCommand line = case words line of
   "add" : item -> Right (AddItem (unwords item))
+  ["done", index] ->
+    if all (`elem` "0123456789") index
+      then Right (DoneItem (read index))
+      else Left "Invalid index."
   ["list"] -> Right ListItems
   ["help"] -> Right Help
   ["quit"] -> Right Quit
@@ -45,10 +50,11 @@ parseCommand line = case words line of
 help :: String
 help =
   unlines
-    [ "add <item>  Add an item.",
-      "list        Display the items.",
-      "help        Display this help message.",
-      "quit        Quit the program."
+    [ "add <item>   Add an item.",
+      "done <item>  Mark an item as done.",
+      "list         Display the items.",
+      "help         Display this help message.",
+      "quit         Quit the program."
     ]
 
 interactWithUser :: Items -> IO ()
@@ -56,13 +62,22 @@ interactWithUser items = do
   putStr "> "
   line <- getLine
   case parseCommand line of
-    Right ListItems -> do
-      putStrLn (displayItems items)
-      interactWithUser items
     Right (AddItem item) -> do
       let newItems = addItem item items
       putStrLn ("Added: " ++ item)
       interactWithUser newItems
+    Right (DoneItem index) -> do
+      let result = removeItem index items
+      case result of
+        Right newItems -> do
+          putStrLn ("Done: " ++ show index)
+          interactWithUser newItems
+        Left err -> do
+          putStrLn ("Error: " ++ err)
+          interactWithUser items
+    Right ListItems -> do
+      putStrLn (displayItems items)
+      interactWithUser items
     Right Help -> do
       putStrLn help
       interactWithUser items
