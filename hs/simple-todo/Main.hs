@@ -30,6 +30,18 @@ interactWithUser items = do
   putStrLn (displayItems newItems)
   interactWithUser newItems
 
+data Command
+  = Quit
+  | DisplayItems
+  | AddItem String
+
+parseCommand :: String -> Either String Command
+parseCommand line = case words line of
+  ["quit"] -> Right Quit
+  ["items"] -> Right DisplayItems
+  "add" : "-" : item -> Right (AddItem (unwords item))
+  _ -> Left "Unsupported command."
+
 main :: IO ()
 main = do
   putStrLn "ToDo App"
