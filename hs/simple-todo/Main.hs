@@ -19,33 +19,56 @@ displayItems items =
 -- removeItem returns a new list without the item at the given index, if not found returns an error message.
 -- removeItem :: Int -> Items -> Either String Items
 
-interactWithUser :: Items -> IO Items
-interactWithUser items = do
-  putStr "Enter a ToDo: "
-  item <- getLine
-  let newItems = addItem item items
-  putStrLn "Item added!"
-  putStrLn ""
-  putStrLn "ToDo List:"
-  putStrLn (displayItems newItems)
-  interactWithUser newItems
-
 data Command
-  = Quit
-  | DisplayItems
-  | AddItem String
+  = AddItem String
+  | ListItems
+  | Help
+  | Quit
 
 parseCommand :: String -> Either String Command
 parseCommand line = case words line of
+  "add" : item -> Right (AddItem (unwords item))
+  ["list"] -> Right ListItems
+  ["help"] -> Right Help
   ["quit"] -> Right Quit
-  ["items"] -> Right DisplayItems
-  "add" : "-" : item -> Right (AddItem (unwords item))
   _ -> Left "Unsupported command."
+
+help :: String
+help =
+  unlines
+    [ "add <item>  Add an item.",
+      "list        Display the items.",
+      "help        Display this help message.",
+      "quit        Quit the program."
+    ]
+
+interactWithUser :: Items -> IO ()
+interactWithUser items = do
+  putStr "> "
+  line <- getLine
+  case parseCommand line of
+    Right ListItems -> do
+      putStrLn (displayItems items)
+      interactWithUser items
+    Right (AddItem item) -> do
+      let newItems = addItem item items
+      putStrLn ("Added: " ++ item)
+      interactWithUser newItems
+    Right Help -> do
+      putStrLn help
+      interactWithUser items
+    Right Quit -> do
+      putStrLn "Bye!"
+      pure ()
+    Left err -> do
+      putStrLn ("Error: " ++ err)
+      interactWithUser items
 
 main :: IO ()
 main = do
   putStrLn "ToDo App"
   putStrLn ""
+  putStrLn help
 
   let initialList = []
   interactWithUser initialList
