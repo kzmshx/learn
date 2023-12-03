@@ -19,9 +19,20 @@ displayItems items =
 -- removeItem returns a new list without the item at the given index, if not found returns an error message.
 -- removeItem :: Int -> Items -> Either String Items
 
+interactWithUser :: Items -> IO Items
+interactWithUser items = do
+  putStr "Enter a ToDo: "
+  item <- getLine
+  let newItems = addItem item items
+  putStrLn "Item added!"
+  putStrLn ""
+  putStrLn "ToDo List:"
+  putStrLn (displayItems newItems)
+  pure newItems
+
 main :: IO ()
 main = do
-  putStr "Name: "
-  name <- getLine
-  let out = "Hello, " ++ name ++ "!"
-  putStrLn out
+  putStrLn "ToDo App"
+  let initialList = []
+  interactWithUser initialList
+  pure ()
