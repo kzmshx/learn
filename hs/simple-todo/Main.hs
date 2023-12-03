@@ -1,4 +1,8 @@
 module Main where
 
-main :: IO () -- `::` means "type of"
-main = putStrLn "Hello, world!" -- putStrLn :: String -> IO ()
+main :: IO ()
+main = do
+  putStr "Name: "
+  name <- getLine
+  let out = "Hello, " ++ name ++ "!"
+  putStrLn out
